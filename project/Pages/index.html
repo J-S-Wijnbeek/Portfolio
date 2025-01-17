@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../java/java.js" defer></script>
+    <link href="../bootstrapCss/bootstrap.min.css" rel="stylesheet">
+    <script src="../bootstrapjava/bootstrap.bundle.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <title>MijnPortfolio</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">mijnPortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="inleiding">Inleiding</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="persoonlijkDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Persoonlijk
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="persoonlijkDropdown">
+                            <li><a class="dropdown-item" href="#persoonlijk">Hobbys</a></li>
+                            <li><a class="dropdown-item" href="#skills">Skills</a></li>
+                            <li><a class="dropdown-item" href="#cv">CV</a></li>
+                            <li><a class="dropdown-item" href="#about-me">Over Mij</a></li>
+                            <li><a class="dropdown-item" href="#zwakten-en-sterktes">Zwakten & Sterktes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="professioneelDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Professioneel
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="navbar-text ms-3" id="clock"></div>
+
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+                    data-bs-target="#loginModal">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="Modaltest">
+
+        <div class="modal fade loginModal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Inloggen</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label2">E-mailadres</label>
+                                <input type="email" class="form-control" id="email" placeholder="" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label2">Wachtwoord</label>
+                                <input type="password" class="form-control" id="password" placeholder="" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
+                        <button type="button" class="btn btn-primary">Inloggen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="inleiding" class="container my-5">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-8 text-start">
+                <h2>Jasper Wijnbeek</h2>
+                <p class="intro">Hey! Ik ben Jasper en ik ben 19 jaar oud! Ik hou van programmeren en gamen!</p>
+                <p>Op dit moment studeer ik op het ROC van Twente in Hengelo.</p>
+                <p>Mijn doel is om uiteindelijk het HBO te doen en daarna aan het werk te gaan.</p>
+                <div class="d-flex justify-content: flex-start; mt-4">
+                    <a href="https://www.instagram.com" class="text-decoration-none mx-3">
+                        <i class="fab fa-instagram fa-3x"></i>
+                    </a>
+                    <a href="https://twitter.com" class="text-decoration-none mx-3">
+                        <i class="fab fa-twitter fa-3x"></i>
+                    </a>
+                    <a href="https://www.facebook.com" class="text-decoration-none mx-3">
+                        <i class="fab fa-facebook fa-3x"></i>
+                    </a>
+                    <a href="https://www.reddit.com" class="text-decoration-none mx-3">
+                        <i class="fab fa-reddit fa-3x"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="profile-img-container">
+                    <img src="../Image/jasper.jpg" alt="" class="profile-img" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="persoonlijk" class="container my-5">
+        <h2>Persoonlijk: hobby's</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 person-img-container left d-flex justify-content-center">
+                <img src="../Image/biken.jpg" alt="Picture 1" class="person-img" data-bs-toggle="modal"
+                    data-bs-target="#modal1" onclick="updateModalImage('../Image/biken.jpg', ' 1')" />
+            </div>
+            <div class="col-12 col-md-6 person-img-container right d-flex justify-content-center">
+                <img src="../Image/gamen.jpg" alt="Picture 2" class="person-img" data-bs-toggle="modal"
+                    data-bs-target="#modal2" onclick="updateModalImage('../Image/gamen.jpg', '2')" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 person-img-container left d-flex justify-content-center">
+                <img src="../Image/lezen.jpg" alt="Picture 3" class="person-img" data-bs-toggle="modal"
+                    data-bs-target="#modal3" onclick="updateModalImage('../Image/lezen.jpg', ' 3')" />
+            </div>
+            <div class="col-12 col-md-6 person-img-container right d-flex justify-content-center">
+                <img src="../Image/gym.jpg" alt="Picture 4" class="person-img" data-bs-toggle="modal"
+                    data-bs-target="#modal4" onclick="updateModalImage('../Image/gym.jpg', ' 4')" />
+            </div>
+        </div>
+    </section>
+
+
+    <section id="skills" class="container my-5">
+        <h2 class="text-center">Skills</h2>
+        <div class="row">
+            <div class="col-12 col-md-3 mb-4 skill-container">
+                <div class="skill-text">
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill-icon">
+                    <i class="fab fa-html5 fa-5x"></i>
+                </div>
+                <p>Bouwen van de structuur van web pages.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+            </div>
+
+            <div class="col-12 col-md-3 mb-4 skill-container">
+                <div class="skill-text">
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill-icon">
+                    <i class="fab fa-css3-alt fa-5x"></i>
+                </div>
+                <p>Stylen en designing van web pages.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3 mb-4 skill-container">
+                <div class="skill-text">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-icon">
+                    <i class="fab fa-js-square fa-5x"></i>
+                </div>
+                <p>Interactiviteit toevoegen aan websites.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-3 mb-4 skill-container">
+                <div class="skill-text">
+                    <h3>PHP</h3>
+                </div>
+                <div class="skill-icon">
+                    <i class="fab fa-php fa-5x"></i>
+                </div>
+                <p>Dynamiques websites bouwen & server-side scripting.</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="zwakten-en-sterktes" class="container my-5">
+        <h2 class="text-center">Zwakten & Sterktes</h2>
+
+        <div class="row">
+
+            <div class="col-12 col-md-6">
+                <h3>Sterktes</h3>
+                <ul>
+                    <li><strong>Creatief denken:</strong> Ik ben in staat om innovatieve oplossingen te vinden voor
+                        complexe problemen.</li>
+                    <li><strong>Teamwork:</strong> Ik werk goed samen binnen diverse teams en deel graag mijn kennis.
+                    </li>
+                    <li><strong>Communicatieve vaardigheden:</strong> Ik communiceer effectief met zowel klanten als
+                        collega's.</li>
+                    <li><strong>Probleemoplossend vermogen:</strong> Ik kan snel en efficiënt problemen identificeren en
+                        oplossen.</li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <h3>Zwakten</h3>
+                <ul>
+                    <li><strong>Geduld:</strong> Soms kan ik ongeduldig zijn bij vertragingen in projecten.</li>
+                    <li><strong>Multitasking:</strong> Ik heb moeite met het beheren van meerdere taken tegelijk, maar
+                        ik werk eraan om dit te verbeteren.</li>
+                    <li><strong>Zelfkritiek:</strong> Ik ben soms te streng voor mezelf en werk harder dan nodig is.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container my-5">
+        <h2 class="text-center">Projecten</h2>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100 position-relative">
+                    <img src="../image/project1.jpg" class="card-img-top" alt="Project 1 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 1</h5>
+                        <p class="card-text">
+                            In mijn eerste jaar van de opleiding Software Developer heb
+                            ik samen met 3 klasgenoten een online webshop ontwikkeld. Dit project
+                            was mijn eerste ervaring met Figma, en hier heb ik mijn vaardigheden in HTML, CSS,
+                            JavaScript, PHP, SQL en GIT kunnen toepassen. We werkten samen om een functionele
+                            en visueel aantrekkelijke webshop te creëren, waarbij ik vooral verantwoordelijk was
+                            voor het programmeren van de frond-end die gedesigned was met figma
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-primary project-btn">Bekijk Project</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100 position-relative">
+                    <img src="../image/project2.jpg" class="card-img-top" alt="Project 2 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 2</h5>
+                        <p class="card-text">
+                            Dit is mijn eerste Fullstack project. In dit project maak ik voor het eerst
+                            gebruik van Razor voor de backend, wat een belangrijke focus was. De nadruk
+                            ligt op het toepassen van PHP, SQL en Git, terwijl de frontend wordt ontwikkeld met HTML,
+                            CSS en JavaScript. Dit project heeft me geholpen om mijn fullstack ontwikkelingsvaardigheden
+                            te verbeteren, waarbij ik zowel de serverzijde als de clientzijde van de applicatie heb
+                            opgebouwd
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-primary project-btn">Bekijk Project</a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100 position-relative">
+                    <img src="../image/project3.jpg" class="card-img-top" alt="Project 3 Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Project 3</h5>
+                        <p class="card-text">
+                            Dit project maakt gebruik van vooral HTML, CSS en JavaScript voor de ontwikkeling van de
+                            website.
+                            De ontwerpen zijn eerst gemaakt als wireframes in Figma
+                            om de structuur en functionaliteit van de website te plannen. Vervolgens zijn de wireframes
+                            omgezet in gedetailleerde mockups, die het visuele ontwerp van de website weergeven.
+                            Deze visuele ontwerpen dienden als leidraad voor de implementatie van het project.
+                        </p>
+                    </div>
+                    <a href="#" class="btn btn-primary project-btn">Bekijk Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="about-me" class="my-5 about-me-width">
+        <h2>Over Mij</h2>
+
+        <h3 class="dropdown-header" data-bs-toggle="collapse" data-bs-target="#loyalistExplanation"
+            aria-expanded="false" aria-controls="loyalistExplanation">
+            Enneagram - Loyalist (Type 6)
+        </h3>
+        <div id="loyalistExplanation" class="collapse text-center">
+            <p>
+                <strong>Loyalist (Type 6)</strong>: Loyalisten zijn betrouwbaar, verantwoordelijk en toegewijd. Ze
+                zijn vaak op zoek naar veiligheid en zekerheid.
+            </p>
+        </div>
+
+        <h3 class="dropdown-header" data-bs-toggle="collapse" data-bs-target="#deskExplanation" aria-expanded="false"
+            aria-controls="deskExplanation">
+            DISC - De Deskundige
+        </h3>
+        <div id="deskExplanation" class="collapse text-center">
+            <p>
+                <strong>De Deskundige (Consciëntieus):</strong> De Deskundige is analytisch, nauwkeurig en gericht op
+                details. Ze zijn vaak goed in het oplossen van problemen en het nemen van weloverwogen beslissingen.
+            </p>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="cv" class="container my-5">
+        <h2 class="text-center">Curriculum Vitae</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3 class="ml-3">Opleiding</h3>
+                <ul class="ml-3">
+                    <li><strong>2023 - Heden:</strong> ROC van Twente, Hengelo - Software Development</li>
+                    <li><strong>2020 - 2023:</strong> MBO ICT - Software Engineering, ROC van Twente</li>
+                    <li><strong>2018 - 2020:</strong> Havo, Enschede</li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <h3 class="ml-3">Werkervaring</h3>
+                <ul class="ml-3">
+                    <li><strong>2021 - Nu:</strong> 3 jaar gewerkt bij TKmaxx, Enschede</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h3 class="ml-3">Skills</h3>
+                <ul class="ml-3">
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>PHP, MySQL</li>
+                    <li>Git & GitHub</li>
+                    <li>React.js, Node.js</li>
+                    <li>Problem-solving & debugging</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button href="../CV/jasper_wijnbeek_cv.pdf" class="btn btn-primary" download>Download mijn CV</button>
+        </div>
+    </section>
+
+
+    <section id="professioneel" class="container my-5">
+        <h2 class="text-center">Professioneel</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3>Professionele Vaardigheden</h3>
+                <ul>
+                    <li><strong>Project Management:</strong> Ervaring met het beheren van projecten, het plannen van
+                        deadlines en het werken met multidisciplinaire teams.</li>
+                    <li><strong>Web Development:</strong> Sterke vaardigheden in front-end en back-end ontwikkeling,
+                        waaronder HTML, CSS, JavaScript, en PHP.</li>
+                    <li><strong>Teamwork & Communicatie:</strong> Effectieve samenwerking in teams en uitstekende
+                        communicatievaardigheden, zowel schriftelijk als mondeling.</li>
+                    <li><strong>Problem-solving:</strong> Oplossingsgerichte denker die snel technische problemen
+                        identificeert en oplost.</li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <h3>Werkervaring</h3>
+                <ul>
+                    <li><strong> -------- </strong> -------------------- </li>
+                    <li><strong> -------- </strong> -------------------- </li>
+                    <li><strong> -------- </strong> -------------------- </li>
+                    <li><strong> -------- </strong> -------------------- </li>
+                    <li><strong> -------- </strong> -------------------- </li>
+                    <li><strong> -------- </strong> -------------------- </li>
+                    <li><strong> -------- </strong> -------------------- </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-12">
+                <h3>Certificaten </h3>
+                <ul>
+                    <li><strong> -------- </strong> -------------------- </li>
+                    <li><strong> -------- </strong> -------------------- </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container my-5">
+        <h2 class="text-center">Mijn werk</h2>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100 position-relative">
+                    <img src="#" class="card-img-top" alt="Werk 1 image">
+                    <div class="card-body">
+                        <h5 class="card-title">Werk 1</h5>
+                        <p class="card-text"> Work in progress</p>
+
+                    </div>
+                    <a href="#" class="btn btn-primary project-btn">Bekijk mijn werk</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100 position-relative">
+                    <img src="#" class="card-img-top" alt="Werk 2 image">
+                    <div class="card-body">
+                        <h5 class="card-title">Werk 2</h5>
+                        <p class="card-text"> Work in progress</p>
+
+                    </div>
+                    <a href="#" class="btn btn-primary project-btn">Bekijk mijn werk</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100 position-relative">
+                    <img src="#" class="card-img-top" alt="Werk 3 image">
+                    <div class="card-body">
+                        <h5 class="card-title">Werk 3</h5>
+                        <p class="card-text"> Work in progress</p>
+
+                    </div>
+                    <a href="#" class="btn btn-primary project-btn">Bekijk mijn werk</a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="contact" class="container my-5">
+        <h2 class="text-center">Contact Me</h2>
+        <div class="text-center">
+            <p>Heb je vragen of wil je meer informatie? Vul het onderstaande formulier in of neem contact met me op via
+                e-mail.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Naam</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Bericht</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Verstuur</button>
+            </form>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../Image/biken.jpg" alt="Picture 1" class="w-100 h-100 object-fit-cover" />
+                    <p class="modalText text-center mt-3">Een van de meest favoriete dingen die ik doe, is
+                        mountainbiken! Ik ben heel vaak tientallen kilometers gaan fietsen met vrienden of ouders. Gaan
+                        mountainbiken met kamperen is ook echt een aanrader, het is heel vermoeiend en gezellig. Het
+                        avontuur van het rijden door ruige paden, het gevoel van vrijheid, en de adrenaline die door je
+                        lijf stroomt, maakt elke rit onvergetelijk. Na een lange dag fietsen, de tent opzetten, en samen
+                        rond het kampvuur zitten met een warme maaltijd – dat zijn de momenten die ik altijd zal
+                        koesteren. Het is niet alleen de fysieke uitdaging, maar ook de connectie met de natuur en met
+                        elkaar die het mountainbiken zo bijzonder maakt. Soms maken we zelfs hele weekendtrips naar de
+                        bergen, waar we nieuwe routes ontdekken en de mooiste uitzichten ervaren.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Terug</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../Image/gamen.jpg" alt="Picture 2" class="w-100 h-100 object-fit-cover" />
+                    <p class="modalText text-center mt-3">
+                    <p class="modalText text-center mt-3"> Gamen is een van mijn favoriete bezigheden. Er is iets
+                        magisch aan het opgaan in een virtuele wereld, waar je alles kunt zijn wat je wilt. Of het nu
+                        een epische strijd is in een online multiplayer game of een spannend avontuur in een
+                        singleplayer game, de ervaring is altijd intens. Ik breng vaak uren door met vrienden, samen op
+                        zoek naar de volgende overwinning, of gewoon lekker ontspannen met een game die me volledig in
+                        zijn greep houdt. Gamen is voor mij niet alleen een manier om te ontsnappen, maar ook een manier
+                        om te verbinden met anderen. De vriendschappen die ik door het gamen heb opgebouwd, zijn soms
+                        net zo sterk als die in de echte wereld. De spanning van een toernooi, de vreugde van een
+                        overwinning, en de teleurstelling van een nederlaag zorgen ervoor dat elke game uniek is. Het is
+                        mijn manier van ontspannen, maar ook van groeien, omdat je telkens nieuwe strategieën en
+                        technieken leert om beter te worden. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Terug</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../Image/lezen.jpg" alt="Picture 3" class="w-100 h-100 object-fit-cover" />
+                    <p class="modalText text-center mt-3">Lezen is een van de dingen die ik enorm waardeer. Er is iets
+                        bijzonders aan het verliezen in een goed boek, waar je volledig opgaat in de wereld die de
+                        auteur heeft gecreëerd. Of het nu een spannend avontuur, een diep filosofisch verhaal, of een
+                        emotioneel drama is, lezen biedt me de kans om nieuwe perspectieven te ontdekken en mijn
+                        verbeelding te stimuleren. Het is mijn manier om te ontsnappen naar een andere tijd of plaats,
+                        waar ik alles kan beleven zonder mijn stoel te verlaten. Lezen helpt me niet alleen om te
+                        ontspannen, maar ook om te leren. Elke pagina biedt nieuwe ideeën en inzichten die ik kan
+                        toepassen in mijn eigen leven. Het is alsof ik met elk boek een nieuwe vriend ontmoet, die zijn
+                        ervaringen en kennis met mij deelt. Ik probeer altijd tijd te maken om te lezen, of het nu in de
+                        ochtend met een kop koffie is of 's avonds voor het slapengaan. Het is een moment van rust en
+                        reflectie, en een van de weinige manieren waarop ik echt kan ontsnappen aan de hectiek van het
+                        dagelijks leven.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Terug</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal4Label" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../Image/gym.jpg" alt="Picture 4" class="w-100 h-100 object-fit-cover" />
+                    <p class="modalText text-center mt-3">Sporten in de sportschool is iets waar ik echt van geniet. Het
+                        biedt me de kans om mijn lichaam uit te dagen en sterker te worden, zowel fysiek als mentaal.
+                        Elke keer als ik de sportschool binnenloop, voel ik me gemotiveerd om mijn grenzen te verleggen.
+                        Of ik nu aan krachttraining doe, cardio-oefeningen probeer, of een groepsles volg, het geeft me
+                        een gevoel van voldoening en energie. De structuur van een sportschool maakt het makkelijker om
+                        mijn doelen te bereiken, of dat nu het opbouwen van spieren, het verbeteren van mijn conditie,
+                        of het verliezen van gewicht is. Wat ik ook waardeer, is de sfeer van hard werken en
+                        zelfverbetering die er heerst. Je ziet andere mensen bezig met hun eigen doelen, en dat
+                        motiveert me om door te gaan, zelfs als het zwaar wordt. Na een intensieve training voel ik me
+                        altijd trots op wat ik heb bereikt, en het geeft me een gevoel van balans en welzijn. Het is
+                        niet alleen goed voor mijn lichaam, maar ook voor mijn geest. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Terug</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
